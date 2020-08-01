@@ -1,9 +1,9 @@
-const csvFilePath = './seeds/team.csv'
-const csv = require('csvtojson');
-const { request } = require('express');
+const csvFilePath = './seeds/conference.csv'
+const csv=require('csvtojson');
 
 
-csv()
+
+let csvData = csv()
     .fromFile(csvFilePath)
     .then((jsonObj) => {
         // Need to figure out how to return this JSON
@@ -16,17 +16,7 @@ csv()
          * 	{a:"4", b:"5". c:"6"}
          * ]
          */
-    }, errorHandle);
+    });
 
-// async /await
-const jsonObj= await csv().fromFile(csvFilePath);
-
-//Promise Chain
-request.get(csvUrl)
- .then((csvdata)=>{
-     return csv().fromString(csvdata)
- })
-.then((jsonObj)=>{
-    
-})
+module.exports = csvData.jsonObj;
 

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema } from 'mongoose';
+const Schema = _Schema;
 
 var confSchema = new Schema({
   ConferceCode:  String, 
@@ -8,4 +8,4 @@ var confSchema = new Schema({
   }
 )
 
-module.exports = confSchema;
+export default confSchema;
